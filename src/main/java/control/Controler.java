@@ -40,19 +40,14 @@ final class Controler {
      */
     static Player[] initPlayers() {
         List<Player> lp = new ArrayList<>();
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Scanner sc = new Scanner(System.in);
         while (true) {
-//            try {
             System.out.println("Enter your name (or " + END + " to finish):");
-//                String s = br.readLine();
             String s = sc.nextLine();
             if (s.contentEquals(END))
                 break;
-            lp.add(new Player(s.trim()));
-//            } catch (IOException e) {
-//                log.warning(e.getLocalizedMessage());
-//            }
+            if (!s.trim().isEmpty())
+                lp.add(new Player(s.trim()));
         }
         Player[] ap = new Player[lp.size()];
         lp.toArray(ap);

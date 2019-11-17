@@ -12,12 +12,15 @@ public class Main {
     private static Zon[] zones;
     private static Player[] players; // The real players
 
-    public static void main (String ... args) {
+    public static void main(String... args) {
         zones = Controler.initZones(ZON_SEATS);
         players = Controler.initPlayers();
+        if (players.length > 0)
+            play();
     }
 
     private static void play() {
         // Put your algo here...
+        log.info("Playing...");
     }
 }
